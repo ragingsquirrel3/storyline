@@ -1,0 +1,5 @@
+$(->
+	$('#MyCarousel').carousel(
+		interval: false
+	)
+)

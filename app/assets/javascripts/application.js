@@ -12,5 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require underscore
 //= require twitter/bootstrap
+//= require carousel
+//= require storyboard
+//= require story_builder
 //= require_tree .

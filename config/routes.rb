@@ -1,4 +1,7 @@
 Storyline::Application.routes.draw do
+  resources :stories
+
+
   root to: "public#index"
   get "public/index"
 
