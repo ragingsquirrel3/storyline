@@ -35,6 +35,10 @@ class StoryboardBuilder
       success: =>
         @startStory(@ds.toJSON())
     )
+    
+    $('.next').click( =>
+  	  @storyToFilter()
+  	)
   
   draw: (data) ->
     $('#vis').empty()
@@ -45,7 +49,7 @@ class StoryboardBuilder
     @vis.datum(data).call(@chart.width(width))
     
   startStory: (data) ->
-    story = new Miso.Storyboard(
+    @story = new Miso.Storyboard(
     		initial: 'loading'
     		scenes:
     			loading:
@@ -63,6 +67,7 @@ class StoryboardBuilder
 
     			ending: {}
     	)
-    	story.start().then(
-    	  story.to('filtered')
-    	)
+    	@story.start().then()
+    	
+  storyToFilter: ->
+    @story.to('filtered')
