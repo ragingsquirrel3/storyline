@@ -24,12 +24,12 @@ class StoriesController < ApplicationController
         },
         {
           id: 'scene1',
-          dimensions: ["Deal Type", "Acquirer Region", "Target Region"],
+          dimensions: ["Acquirer Region", "Target Region"],
           filters: []
         }
       ]}
     
-
+    puts @test_story
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @story }
