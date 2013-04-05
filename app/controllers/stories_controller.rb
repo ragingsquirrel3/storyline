@@ -14,6 +14,21 @@ class StoriesController < ApplicationController
   # GET /stories/1.json
   def show
     @story = Story.find(params[:id])
+    
+    @test_story = {
+      scenes: [
+        {
+          id: 'scene0',
+          dimensions: ["Deal Type", "Acquirer Region", "Target Region"],
+          filters: []
+        },
+        {
+          id: 'scene1',
+          dimensions: ["Deal Type", "Acquirer Region", "Target Region"],
+          filters: []
+        }
+      ]}
+    
 
     respond_to do |format|
       format.html # show.html.erb
