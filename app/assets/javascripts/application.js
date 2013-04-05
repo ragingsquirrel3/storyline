@@ -14,10 +14,7 @@
 //= require jquery_ujs
 //= require underscore
 //= require twitter/bootstrap
-//= require carousel
-//= require storyboard
 //= require d3.v2.min
 //= require d3.parsets
-//= require ds.min
 //= require story_builder
 //= require_tree .
