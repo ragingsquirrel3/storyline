@@ -16,5 +16,8 @@
 //= require twitter/bootstrap
 //= require d3.v2.min
 //= require d3.parsets
+//= require backbone-min
+//= require jade-min
+//= require templates
 //= require story_builder
 //= require_tree .

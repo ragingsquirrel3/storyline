@@ -4,5 +4,6 @@ class PublicController < ApplicationController
   end
 
   def about
+    render :js => "alert('Hello Rails');"
   end
 end

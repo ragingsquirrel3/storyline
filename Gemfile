@@ -16,10 +16,6 @@ gem 'rails-backbone'
 gem 'devise'
 gem 'newrelic_rpm'
 
-# SMS sending
-gem 'rest-client'
-gem 'twilio-ruby'
-
 group :test, :development do
   gem "rspec-rails", "~> 2.0"
 end
