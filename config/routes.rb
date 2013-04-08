@@ -1,5 +1,7 @@
 Storyline::Application.routes.draw do
-  resources :stories
+  resources :stories do
+    get 'api'
+  end
 
 
   root to: "public#index"

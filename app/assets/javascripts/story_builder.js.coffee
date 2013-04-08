@@ -34,10 +34,12 @@ class StoryboardBuilder extends Backbone.View
         dimensions: ["Acquirer Country", "Target Region"]
         filters: { 'Acquirer Country': ['US', 'CH'] }
       
-    d3.csv("../data/ma.csv", (csv) =>
-      @data = csv
-      @buildStory(story)
-      # grid.show(csv)
+    d3.json("../stories/5161d044d952c038a1000002/api.json", (storyJson) =>
+      d3.csv("../data/ma.csv", (csv) =>
+        @data = csv
+        @buildStory(storyJson)
+        # grid.show(csv)
+      )
     )
     
   render: ->

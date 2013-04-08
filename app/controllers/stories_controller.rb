@@ -35,6 +35,13 @@ class StoriesController < ApplicationController
       format.json { render json: @story }
     end
   end
+  
+  def api
+    @story = Story.find(params[:story_id])
+    respond_to do |format|
+      format.json { render json: @story.to_api }
+    end
+  end
 
   # GET /stories/new
   # GET /stories/new.json
