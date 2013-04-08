@@ -1,9 +1,9 @@
 $( ->
-  window.storyView = new StoryboardBuilder
+  window.storyView = new StoryboardBuilder previewMode: true
 )
 
 class StoryboardBuilder extends Backbone.View
-  el: '.story'
+  el: '.article'
   storyLength: null
   
   events:
@@ -18,23 +18,12 @@ class StoryboardBuilder extends Backbone.View
     @render()
     # grid = new data_grid.DataGrid("data_grid")
     
-    # RAW STORY HERE ****** ######
-    story = 
-      scene0:
-        content: 'Lorem Upsum dolor sit amet, consectetur apdd elit, sed so tempor to the max.  Lorem Upsum dolor sit amet, consectetur apdd elit, sed so tempor to the max.'
-        dimensions: ["Acquirer Region", "Target Region"]
-    
-      scene1:
-        content: 'Dalor ipsumtat lo?  Lorem Upsum dolor sit amet, consectetur apdd elit, sed so tempor to the max.'
-        dimensions: ["Acquirer Region", "Target Region"]
-        filters: { 'Acquirer Region': ['North America', 'Asia-Pacific'] }
-    
-      scene2:
-        content: 'Lorem Upsum dolor sit amet, consectetur apdd elit, sed so tempor to the max.'
-        dimensions: ["Acquirer Country", "Target Region"]
-        filters: { 'Acquirer Country': ['US', 'CH'] }
+    if options.previewMode
+      jsonPath = "../stories/#{$(@el).data().id}/api.json"
+    else
+      jsonPath = "../data/api.json"
       
-    d3.json("../stories/5161d044d952c038a1000002/api.json", (storyJson) =>
+    d3.json(jsonPath, (storyJson) =>
       d3.csv("../data/ma.csv", (csv) =>
         @data = csv
         @buildStory(storyJson)

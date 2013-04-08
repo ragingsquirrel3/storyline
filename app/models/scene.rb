@@ -9,5 +9,5 @@ class Scene
   field :content, type: String, default: 'Please add some content.'
   
   field :chart_type, type: String, default: 'parsets'
-  field :dimensions, type: Array, default: ['Acquiring Region', 'Target Region']
+  field :dimensions, type: Array, default: ['Acquirer Region', 'Target Region']
 end
