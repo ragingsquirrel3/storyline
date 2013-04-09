@@ -1,6 +1,7 @@
 Storyline::Application.routes.draw do
   resources :stories do
     get 'api'
+    resources :scenes
   end
 
 

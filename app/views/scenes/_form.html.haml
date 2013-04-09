@@ -1,0 +1,22 @@
+= form_for @scene, url: story_scenes_path do |f|
+  - if @scene.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@scene.errors.count, "error")} prohibited this story from being saved:"
+      %ul
+        - @scene.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :content
+    = f.text_area :content   
+  .field
+    = f.label :chart_type
+    = f.text_field :chart_type
+  .field
+    = f.label :raw_data
+    = f.file_field(:data, :class => 'file_input')
+  .actions
+    = f.submit 'Save'

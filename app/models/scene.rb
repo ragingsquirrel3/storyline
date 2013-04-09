@@ -10,4 +10,5 @@ class Scene
   
   field :chart_type, type: String, default: 'parsets'
   field :dimensions, type: Array, default: ['Acquirer Region', 'Target Region']
+  field :data, type: Hash # prototype raw data
 end
